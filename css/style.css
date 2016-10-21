@@ -1,0 +1,31 @@
+.bg-inverse {
+  background-color: #373a3c !important;
+  color: #fff !important; }
+
+@media (min-width: 768px) {
+  .row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; } }
+
+.navbar .navbar-toggle {
+  border-color: white; }
+  .navbar .navbar-toggle .icon-bar {
+    background-color: white; }
+
+.navbar .navbar-brand {
+  margin: 0;
+  text-transform: capitalize; }
+
+#sword-list {
+  padding-top: 20px;
+  border-top: 1px solid black; }
+  #sword-list .col-sm-6 {
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+    margin-bottom: 20px; }
+
+#keyboard key {
+  text-align: center;
+  float: left; }
