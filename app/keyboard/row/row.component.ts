@@ -1,4 +1,4 @@
-import { Component,Input,ElementRef } from '@angular/core';
+import { Component,Input,ElementRef,ViewChildren } from '@angular/core';
 import { KeyComponent } from '../key/key.component';
 
 @Component({
@@ -9,6 +9,8 @@ import { KeyComponent } from '../key/key.component';
 
 export class RowComponent implements ngAfterViewInit{
 
+  @ViewChildren(KeyComponent) private keyComponents;
+
   @Input() keys;
 
   constructor(public elem:ElementRef){
@@ -16,9 +18,11 @@ export class RowComponent implements ngAfterViewInit{
 
   ngAfterViewInit(){
     var length = (100/this.keys.length).toString()+'%';
-    console.log($(this.elem.nativeElement));
     $(this.elem.nativeElement).find('key').css({'width':length});
-    window.e = this.elem;
+  }
+
+  activateKey(i){
+    this.keyComponents._results[i].activate();
   }
 
 }

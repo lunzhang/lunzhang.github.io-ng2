@@ -9,16 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var key_component_1 = require('../key/key.component');
 var RowComponent = (function () {
     function RowComponent(elem) {
         this.elem = elem;
     }
     RowComponent.prototype.ngAfterViewInit = function () {
         var length = (100 / this.keys.length).toString() + '%';
-        console.log($(this.elem.nativeElement));
         $(this.elem.nativeElement).find('key').css({ 'width': length });
-        window.e = this.elem;
     };
+    RowComponent.prototype.activateKey = function (i) {
+        this.keyComponents._results[i].activate();
+    };
+    __decorate([
+        core_1.ViewChildren(key_component_1.KeyComponent), 
+        __metadata('design:type', Object)
+    ], RowComponent.prototype, "keyComponents", void 0);
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
