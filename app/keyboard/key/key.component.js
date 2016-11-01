@@ -9,20 +9,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var events_service_1 = require('../services/events.service');
 var KeyComponent = (function () {
     function KeyComponent() {
         this.activated = false;
+        this.onEvent = new core_1.EventEmitter();
     }
     KeyComponent.prototype.activate = function () {
+        var _this = this;
         this.activated = true;
+        this.timer = setTimeout(function () {
+            _this.onEvent.emit(events_service_1.Events.lose);
+        }, 2000);
+        return this;
     };
     KeyComponent.prototype.deactivate = function () {
+        clearTimeout(this.timer);
         this.activated = false;
     };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
     ], KeyComponent.prototype, "value", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], KeyComponent.prototype, "onEvent", void 0);
     KeyComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

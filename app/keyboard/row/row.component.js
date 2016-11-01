@@ -13,13 +13,17 @@ var key_component_1 = require('../key/key.component');
 var RowComponent = (function () {
     function RowComponent(elem) {
         this.elem = elem;
+        this.onEvent = new core_1.EventEmitter();
     }
     RowComponent.prototype.ngAfterViewInit = function () {
         var length = (100 / this.keys.length).toString() + '%';
         $(this.elem.nativeElement).find('key').css({ 'width': length });
     };
     RowComponent.prototype.activateKey = function (i) {
-        this.keyComponents._results[i].activate();
+        return this.keyComponents._results[i].activate();
+    };
+    RowComponent.prototype.keyEvent = function (event) {
+        this.onEvent.emit(event);
     };
     __decorate([
         core_1.ViewChildren(key_component_1.KeyComponent), 
@@ -29,6 +33,10 @@ var RowComponent = (function () {
         core_1.Input(), 
         __metadata('design:type', Object)
     ], RowComponent.prototype, "keys", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], RowComponent.prototype, "onEvent", void 0);
     RowComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

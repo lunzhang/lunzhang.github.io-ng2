@@ -1,4 +1,4 @@
-import { Component,Input,ElementRef,ViewChildren } from '@angular/core';
+import { Component,EventEmitter,Output,Input,ElementRef,ViewChildren } from '@angular/core';
 import { KeyComponent } from '../key/key.component';
 
 @Component({
@@ -10,8 +10,8 @@ import { KeyComponent } from '../key/key.component';
 export class RowComponent implements ngAfterViewInit{
 
   @ViewChildren(KeyComponent) private keyComponents;
-
   @Input() keys;
+  @Output() onEvent = new EventEmitter();
 
   constructor(public elem:ElementRef){
   }
@@ -22,7 +22,11 @@ export class RowComponent implements ngAfterViewInit{
   }
 
   activateKey(i){
-    this.keyComponents._results[i].activate();
+    return this.keyComponents._results[i].activate();
+  }
+
+  keyEvent(event){
+    this.onEvent.emit(event);
   }
 
 }

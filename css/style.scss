@@ -1,6 +1,7 @@
 .bg-inverse{
   background-color: #373a3c!important;
   color: #fff!important;
+  border-bottom: 1px solid white;
 }
 @media (min-width:768px){
   .row-eq-height {
@@ -11,6 +12,7 @@
   }
 }
 .navbar{
+  margin-bottom: 0;
   .navbar-toggle{
     border-color:white;
     .icon-bar{
@@ -22,17 +24,26 @@
     text-transform: capitalize;
   }
 }
-#sword-list{
-  padding-top:20px;
-  border-top:1px solid black;
-  .col-sm-6{
-    border-bottom:1px solid black;
-    padding-bottom:20px;
-    margin-bottom:20px;
+
+#swords{
+  padding-top:22px;
+  #sword-list{
+    padding-top:20px;
+    border-top:1px solid black;
+    .col-sm-6{
+      border-bottom:1px solid black;
+      padding-bottom:20px;
+      margin-bottom:20px;
+    }
   }
 }
 
 #keyboard{
+  background-color: #191a1b!important;
+  padding-top:22px;
+  h5{
+    color:white;
+  }
   .btn{
     padding:8px 30px
   }
@@ -51,11 +62,14 @@
       border: 1px solid #a09797;
     }
     h4{
+      color:white;
       margin:0;
     }
     .activated{
-      color:#9e4444;
-      border:1px solid #b17272;
+      h4{
+        color:#cc1d1d;
+      }
+      border:1px solid #980d0d;
     }
   }
   @media (max-width:768px){
