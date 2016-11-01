@@ -28,7 +28,7 @@ var KeyboardComponent = (function () {
         if (!this.inProgress) {
             this.inProgress = true;
             this.timer = setInterval(function () {
-                var rowNum = Math.floor((Math.random() * 3));
+                var rowNum = Math.floor((Math.random() * 4));
                 var keyNum = Math.floor((Math.random() * _this.rows[rowNum].length));
                 var key = _this.rowComponents._results[rowNum].activateKey(keyNum);
                 _this.activatedKeys[key.value] = key;

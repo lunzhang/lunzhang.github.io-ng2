@@ -27,7 +27,7 @@ export class KeyboardComponent implements ngAfterViewInit{
     if(!this.inProgress){
       this.inProgress = true;
       this.timer = setInterval(()=>{
-        var rowNum = Math.floor((Math.random() * 3));
+        var rowNum = Math.floor((Math.random() * 4));
         var keyNum = Math.floor((Math.random() * this.rows[rowNum].length));
         var key = this.rowComponents._results[rowNum].activateKey(keyNum);
         this.activatedKeys[key.value] = key;
