@@ -65,11 +65,17 @@
       color:white;
       margin:0;
     }
-    .activated{
+    .wrong{
       h4{
         color:#cc1d1d;
       }
       border:1px solid #980d0d;
+    }
+    .activated{
+      h4{
+        color:#69bb1f;
+      }
+      border:1px solid #3dd816;
     }
   }
   @media (max-width:768px){

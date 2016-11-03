@@ -52,10 +52,14 @@
     #keyboard key h4 {
       color: white;
       margin: 0; }
-    #keyboard key .activated {
+    #keyboard key .wrong {
       border: 1px solid #980d0d; }
-      #keyboard key .activated h4 {
+      #keyboard key .wrong h4 {
         color: #cc1d1d; }
+    #keyboard key .activated {
+      border: 1px solid #3dd816; }
+      #keyboard key .activated h4 {
+        color: #69bb1f; }
   @media (max-width: 768px) {
     #keyboard key div {
       padding: 5px 15px; } }

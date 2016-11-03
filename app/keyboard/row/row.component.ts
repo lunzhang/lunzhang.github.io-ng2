@@ -16,17 +16,22 @@ export class RowComponent implements ngAfterViewInit{
   constructor(public elem:ElementRef){
   }
 
+  //length of each row depends on # of keys
   ngAfterViewInit(){
     var length = (100/this.keys.length).toString()+'%';
     $(this.elem.nativeElement).find('key').css({'width':length});
   }
 
-  activateKey(i){
-    return this.keyComponents._results[i].activate();
+  getKey(i){
+    return this.keyComponents._results[i];
   }
 
   keyEvent(event){
     this.onEvent.emit(event);
+  }
+
+  errorKey(i){
+    return this.keyComponents._results[i].error();
   }
 
 }

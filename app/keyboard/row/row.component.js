@@ -15,15 +15,19 @@ var RowComponent = (function () {
         this.elem = elem;
         this.onEvent = new core_1.EventEmitter();
     }
+    //length of each row depends on # of keys
     RowComponent.prototype.ngAfterViewInit = function () {
         var length = (100 / this.keys.length).toString() + '%';
         $(this.elem.nativeElement).find('key').css({ 'width': length });
     };
-    RowComponent.prototype.activateKey = function (i) {
-        return this.keyComponents._results[i].activate();
+    RowComponent.prototype.getKey = function (i) {
+        return this.keyComponents._results[i];
     };
     RowComponent.prototype.keyEvent = function (event) {
         this.onEvent.emit(event);
+    };
+    RowComponent.prototype.errorKey = function (i) {
+        return this.keyComponents._results[i].error();
     };
     __decorate([
         core_1.ViewChildren(key_component_1.KeyComponent), 
