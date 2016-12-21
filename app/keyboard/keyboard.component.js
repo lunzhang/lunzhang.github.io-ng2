@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var row_component_1 = require("./row/row.component");
+var core_1 = require('@angular/core');
+var row_component_1 = require('./row/row.component');
 var KeyboardComponent = (function () {
     function KeyboardComponent() {
         this.rows = [['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'],
@@ -102,25 +102,25 @@ var KeyboardComponent = (function () {
             }
         }
     };
+    __decorate([
+        core_1.ViewChildren(row_component_1.RowComponent), 
+        __metadata('design:type', Object)
+    ], KeyboardComponent.prototype, "rowComponents", void 0);
+    __decorate([
+        core_1.HostListener('document:keypress', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [KeyboardEvent]), 
+        __metadata('design:returntype', void 0)
+    ], KeyboardComponent.prototype, "handleKeyboardEvent", null);
+    KeyboardComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'keyboard',
+            templateUrl: './keyboard.component.html'
+        }), 
+        __metadata('design:paramtypes', [])
+    ], KeyboardComponent);
     return KeyboardComponent;
 }());
-__decorate([
-    core_1.ViewChildren(row_component_1.RowComponent),
-    __metadata("design:type", Object)
-], KeyboardComponent.prototype, "rowComponents", void 0);
-__decorate([
-    core_1.HostListener('document:keypress', ['$event']),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [KeyboardEvent]),
-    __metadata("design:returntype", void 0)
-], KeyboardComponent.prototype, "handleKeyboardEvent", null);
-KeyboardComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'keyboard',
-        templateUrl: './keyboard.component.html'
-    }),
-    __metadata("design:paramtypes", [])
-], KeyboardComponent);
 exports.KeyboardComponent = KeyboardComponent;
 //# sourceMappingURL=keyboard.component.js.map

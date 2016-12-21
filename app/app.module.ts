@@ -9,15 +9,19 @@ import { RowComponent } from './keyboard/row/row.component';
 import { KeyComponent } from './keyboard/key/key.component';
 import { routing } from './app.routes';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { GridModule } from 'ng2-grid-component';
+import { GridComponent } from './grid/grid.component';
+import { ContentComponent } from './grid/content/content.component';
 
 @NgModule({
-  imports:      [ BrowserModule,FormsModule, routing],
+  imports:      [ GridModule,BrowserModule,FormsModule, routing],
   declarations: [ AppComponent,SearchComponent,SwordComponent,
-    KeyboardComponent,RowComponent,KeyComponent ],
+    KeyboardComponent,RowComponent,KeyComponent,GridComponent,ContentComponent ],
   bootstrap:    [ AppComponent ],
   providers:    [{
     provide: LocationStrategy, useClass: HashLocationStrategy
-  }]
+  }],
+  entryComponents :[ContentComponent]
 })
 
 export class AppModule { }

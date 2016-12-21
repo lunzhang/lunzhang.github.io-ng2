@@ -19,18 +19,22 @@ var row_component_1 = require('./keyboard/row/row.component');
 var key_component_1 = require('./keyboard/key/key.component');
 var app_routes_1 = require('./app.routes');
 var common_1 = require('@angular/common');
+var ng2_grid_component_1 = require('ng2-grid-component');
+var grid_component_1 = require('./grid/grid.component');
+var content_component_1 = require('./grid/content/content.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routes_1.routing],
+            imports: [ng2_grid_component_1.GridModule, platform_browser_1.BrowserModule, forms_1.FormsModule, app_routes_1.routing],
             declarations: [app_component_1.AppComponent, search_component_1.SearchComponent, sword_component_1.SwordComponent,
-                keyboard_component_1.KeyboardComponent, row_component_1.RowComponent, key_component_1.KeyComponent],
+                keyboard_component_1.KeyboardComponent, row_component_1.RowComponent, key_component_1.KeyComponent, grid_component_1.GridComponent, content_component_1.ContentComponent],
             bootstrap: [app_component_1.AppComponent],
             providers: [{
                     provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy
-                }]
+                }],
+            entryComponents: [content_component_1.ContentComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
