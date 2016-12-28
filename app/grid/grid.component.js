@@ -13,6 +13,13 @@ var ng2_grid_component_1 = require('ng2-grid-component');
 var content_component_1 = require('./content/content.component');
 var GridComponent = (function () {
     function GridComponent() {
+        this.customConfig = {
+            'maxWidth': 2,
+            'maxHeight': 2,
+            "maxRow": 4,
+            "maxCol": 6,
+            'theme': 'sky'
+        };
     }
     GridComponent.prototype.ngAfterViewInit = function () {
         for (var i = 0; i < 5; i++) {
@@ -26,7 +33,7 @@ var GridComponent = (function () {
     };
     __decorate([
         core_1.ViewChild(ng2_grid_component_1.NgGrid), 
-        __metadata('design:type', (typeof (_a = typeof ng2_grid_component_1.NgGrid !== 'undefined' && ng2_grid_component_1.NgGrid) === 'function' && _a) || Object)
+        __metadata('design:type', ng2_grid_component_1.NgGrid)
     ], GridComponent.prototype, "grid", void 0);
     GridComponent = __decorate([
         core_1.Component({
@@ -34,13 +41,11 @@ var GridComponent = (function () {
             selector: 'grid-page',
             template: '<div class="container-fluid"><div class="row"><div class="col-xs-12">' +
                 '<button (click)="addWidget()" class="btn btn-primary" style="margin: 25px;">Add Widget!</button>' +
-                '</div></div></div>' +
-                '<grid></grid>'
+                '</div></div>  <div class="col-xs-12"><grid [customConfig]="customConfig"></grid></div> </div>'
         }), 
         __metadata('design:paramtypes', [])
     ], GridComponent);
     return GridComponent;
-    var _a;
 }());
 exports.GridComponent = GridComponent;
 //# sourceMappingURL=grid.component.js.map
