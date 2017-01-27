@@ -8,7 +8,7 @@ import { GridComponent } from './grid/grid.component';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/keyboard',
+    redirectTo: '/grid',
     pathMatch: 'full'
   },
   { path: 'swords', component: SwordComponent },

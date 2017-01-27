@@ -11,17 +11,19 @@ import { routing } from './app.routes';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { GridModule } from 'ng2-grid-component';
 import { GridComponent } from './grid/grid.component';
-import { ContentComponent } from './grid/content/content.component';
+import { BarComponent } from './grid/bar/bar.component';
+import { PieComponent } from './grid/pie/pie.component';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 @NgModule({
-  imports:      [ GridModule,BrowserModule,FormsModule, routing],
+  imports:      [ GridModule,BrowserModule,FormsModule, routing,NgxChartsModule],
   declarations: [ AppComponent,SearchComponent,SwordComponent,
-    KeyboardComponent,RowComponent,KeyComponent,GridComponent,ContentComponent ],
+    KeyboardComponent,RowComponent,KeyComponent,GridComponent,BarComponent,PieComponent],
   bootstrap:    [ AppComponent ],
   providers:    [{
     provide: LocationStrategy, useClass: HashLocationStrategy
   }],
-  entryComponents :[ContentComponent]
+  entryComponents :[BarComponent,PieComponent]
 })
 
 export class AppModule { }

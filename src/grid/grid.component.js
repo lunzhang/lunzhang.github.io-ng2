@@ -10,26 +10,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var ng2_grid_component_1 = require("ng2-grid-component");
-var content_component_1 = require("./content/content.component");
+var bar_component_1 = require("./bar/bar.component");
+var pie_component_1 = require("./pie/pie.component");
 var GridComponent = (function () {
     function GridComponent() {
         this.customConfig = {
-            'maxWidth': 2,
-            'maxHeight': 2,
+            'minWidth': 3,
+            'minHeight': 3,
+            'colWidth': 250,
+            'rowHeight': 150,
             "maxRow": 4,
             "maxCol": 6,
-            'theme': 'sky'
+            'theme': 'light'
         };
     }
     GridComponent.prototype.ngAfterViewInit = function () {
-        for (var i = 0; i < 5; i++) {
-            var widget = this.grid.addWidget();
-            widget.content = content_component_1.ContentComponent;
-        }
-    };
-    GridComponent.prototype.addWidget = function (e) {
         var widget = this.grid.addWidget();
-        widget.content = content_component_1.ContentComponent;
+        widget.widgetTitle = "Stackoverflow Top Tech 2016";
+        widget.innerComponent = bar_component_1.BarComponent;
+        var widget = this.grid.addWidget();
+        widget.widgetTitle = "Stackoverflow Top Tech 2016";
+        widget.innerComponent = pie_component_1.PieComponent;
+    };
+    GridComponent.prototype.addBar = function (e) {
+        var widget = this.grid.addWidget();
+        widget.widgetTitle = "Stackoverflow Top Tech 2016";
+        widget.innerComponent = bar_component_1.BarComponent;
+    };
+    GridComponent.prototype.addPie = function (e) {
+        var widget = this.grid.addWidget();
+        widget.widgetTitle = "Stackoverflow Top Tech 2016";
+        widget.innerComponent = pie_component_1.PieComponent;
     };
     return GridComponent;
 }());
@@ -42,7 +53,8 @@ GridComponent = __decorate([
         moduleId: 'module.id',
         selector: 'grid-page',
         template: '<div class="container-fluid"><div class="row"><div class="col-xs-12">' +
-            '<button (click)="addWidget()" class="btn btn-primary" style="margin: 25px;">Add Widget!</button>' +
+            '<button (click)="addBar()" class="btn btn-primary" style="margin: 25px;">Add Bar Chart!</button>' +
+            '<button (click)="addPie()" class="btn btn-primary" style="margin: 25px;">Add Pie Chart!</button>' +
             '</div></div>  <div class="col-xs-12"><grid [customConfig]="customConfig"></grid></div> </div>'
     }),
     __metadata("design:paramtypes", [])
