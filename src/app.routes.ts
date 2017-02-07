@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { SwordComponent } from './swords/sword.component';
 import { KeyboardComponent } from './keyboard/keyboard.component';
 import { GridComponent } from './grid/grid.component';
+import { Notes } from './notes/notes';
 
 export const routes: Routes = [
   {
@@ -13,7 +14,8 @@ export const routes: Routes = [
   },
   { path: 'swords', component: SwordComponent },
   { path: 'keyboard', component: KeyboardComponent },
-  { path: 'grid', component : GridComponent }
+  { path: 'grid', component : GridComponent },
+  { path: 'notes', component : Notes }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

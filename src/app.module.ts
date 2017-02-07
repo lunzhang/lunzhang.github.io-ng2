@@ -13,12 +13,15 @@ import { GridModule } from 'ng2-grid-component';
 import { GridComponent } from './grid/grid.component';
 import { BarComponent } from './grid/bar/bar.component';
 import { PieComponent } from './grid/pie/pie.component';
+import { Notes } from './notes/notes';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
+
 
 @NgModule({
   imports:      [ GridModule,BrowserModule,FormsModule, routing,NgxChartsModule],
   declarations: [ AppComponent,SearchComponent,SwordComponent,
-    KeyboardComponent,RowComponent,KeyComponent,GridComponent,BarComponent,PieComponent],
+    KeyboardComponent,RowComponent,KeyComponent,GridComponent,Notes,
+    BarComponent,PieComponent],
   bootstrap:    [ AppComponent ],
   providers:    [{
     provide: LocationStrategy, useClass: HashLocationStrategy

@@ -1,0 +1,98 @@
+<div id="notes" class="container-fluid">
+  <div id="nav" class="row">
+    <div class="col-xs-12">
+      <ul class="nav nav-tabs">
+        <li role="presentation" [class.active]="navigation.ng2" (click)="setNav('ng2')"><a>Ng2</a></li>
+        <li role="presentation" [class.active]="navigation.algo" (click)="setNav('algo')"><a >Algo</a></li>
+        <li role="presentation" [class.active]="navigation.design" (click)="setNav('design')"><a >Design</a></li>
+        <li role="presentation" [class.active]="navigation.inherit" (click)="setNav('OO')"><a >OO</a></li>
+        <li role="presentation" [class.active]="navigation.es6" (click)="setNav('es6')"><a >ES6</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row" *ngIf="navigation.ng2">
+    <div class="col-sm-4" >
+      @Component <br>
+      selector -> html element,<br>
+      template/templateUrl,<br>
+      directives:[]<br>
+    </div>
+    <div class="col-sm-4">
+      Every Ng2 app needs root module<br>
+      @NgModule<br>
+      imports: helper modules,<br>
+      declarations: app components,<br>
+      bootstrap: main component,<br>
+      entryComponents: components loaded without selectors<br>
+      providers: services<br>
+    </div>
+    <div class="col-sm-4">
+      main.ts bootsraps module to index.html exe my-app<br>
+      @Directives<br>
+      selector-> html element<br>
+      @Injectable-> services
+    </div>
+  </div>
+  <div class="row" *ngIf="navigation.algo">
+    <div class="col-sm-6">
+      <h3>Big-O Algorithm Compleixty</h3>
+      O(n!) > O(2^n) > O(n^2) > O(n log n) > O(n) > O(log n) > O(1)
+    </div>
+    <div class="col-sm-6">
+      <h3>Quick Sort</h3>
+      Pick a pivot, reorrder according to pivot, repeat subarray.<br>
+      <img src="../img/qs.png" height="500">
+    </div>
+  </div>
+  <div class="row" *ngIf="navigation.design">
+    <div class="col-sm-6">
+      <h3>Design</h3>
+      Uses, Constraints, Abstract Design(Components Required), Bottlenecks, Scalability
+    </div>
+  </div>
+  <div class="row" *ngIf="navigation.OO">
+    <div class="col-xs-12">
+      <h3>OO</h3>
+    </div>
+    <div class="col-sm-6" ng-non-bindable>
+      <h2>Prototypes</h2>
+      Every javascript object has a prototype. <br>
+      __proto__ is the actual object that is used in the lookup chain to resolve methods, etc.
+      prototype is the object that is used to build __proto__ when you create an object with new:
+    </div>
+    <div class="col-sm-6" ng-non-bindable>
+      <h2>Prototype Inherit 1</h2>
+      function Person(){{'{}'}}  <br>
+      function Child(){{'{}'}} <br>
+      Child.prototype = Object.create(Person.prototype); <br>
+      Child.prototype.constructor = Child; <br>
+    </div>
+    <div class="col-sm-6" ng-non-bindable>
+      <h2>Prototype Inherit 2</h2>
+      function Person(){{'{}'}}   <br>
+      function Child(){{'{}'}} <br>
+      function __()
+      __.prototype = Person.prototype;
+      Child.prototype = new __();<br>
+      Child.prototype.constructor = Child; <br>
+    </div>
+    <div class="col-sm-6" ng-non-bindable>
+      <h2>ES6 Class</h2>
+      class Person{{'{}'}} <br>
+      class Child extends Person{{'{}'}} <br>
+    </div>
+  </div>
+  <div class="row" *ngIf="navigation.es6">
+    <div class="col-xs-12">
+      <h3>ES6</h3>
+    </div>
+    <div class="col-sm-6" ng-non-bindable>
+      var is function scoped <br>
+      let is block scoped
+    </div>
+    <div class="col-sm-6" ng-non-bindable>
+      var is function scoped <br>
+      let is block scoped
+    </div>
+  </div>
+</div>

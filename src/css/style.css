@@ -1,6 +1,6 @@
-.widget-header-title{
-  text-align: center;
-}
+.widget-header-title {
+  text-align: center; }
+
 .bg-inverse {
   background-color: #373a3c !important;
   color: #fff !important;
@@ -66,3 +66,8 @@
   @media (max-width: 768px) {
     #keyboard key div {
       padding: 5px 15px; } }
+
+#notes {
+  padding-top: 25px; }
+  #notes #nav {
+    padding-bottom: 25px; }
