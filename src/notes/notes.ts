@@ -13,7 +13,9 @@ export class Notes {
     'algo':false,
     'design':false,
     'OO':false,
-    'es6':false
+    'es6':false,
+    'security':false,
+    'DOM':false
   }
 
   setNav(nav){

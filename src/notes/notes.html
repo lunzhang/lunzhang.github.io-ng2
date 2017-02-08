@@ -7,6 +7,8 @@
         <li role="presentation" [class.active]="navigation.design" (click)="setNav('design')"><a >Design</a></li>
         <li role="presentation" [class.active]="navigation.inherit" (click)="setNav('OO')"><a >OO</a></li>
         <li role="presentation" [class.active]="navigation.es6" (click)="setNav('es6')"><a >ES6</a></li>
+        <li role="presentation" [class.active]="navigation.security" (click)="setNav('security')"><a >Security</a></li>
+        <li role="presentation" [class.active]="navigation.DOM" (click)="setNav('DOM')"><a >DOM</a></li>
       </ul>
     </div>
   </div>
@@ -93,6 +95,73 @@
     <div class="col-sm-6" ng-non-bindable>
       var is function scoped <br>
       let is block scoped
+    </div>
+  </div>
+  <div class="row" *ngIf="navigation.security">
+    <div class="col-xs-12">
+      <h3>Security</h3>
+    </div>
+    <div class="col-sm-6" ng-non-bindable>
+      XSS<br>
+      Injection of client-side scripts into web pages.
+    </div>
+    <div class="col-sm-6" ng-non-bindable>
+      CSRF/XSRF <br>
+      Session riding, attacker emits actions by a user that a website trusts.
+    </div>
+    <div class="col-sm-6" ng-non-bindable>
+      Same Origin Policy <br>
+      Scripts on a webpage can only execute from same domain.
+    </div>
+  </div>
+  <div class="row" *ngIf="navigation.network">
+    <div class="col-xs-12">
+      <h3>Network</h3>
+    </div>
+    <div class="col-sm-6" ng-non-bindable>
+      HTTP vs XHR/XMLHttpRequest<br>
+      Http requests reloads page.  XHR is asynchronous and doesn't do full page reload <br>
+      Ajax uses XHR and javascript to make asynrhconous dom changes.
+    </div>
+    <div class="col-sm-6" ng-non-bindable>
+      HttpOnly Cookies <br>
+      Cookies will not be accessed through client side scripts.
+    </div>
+    <div class="col-sm-6" ng-non-bindable>
+      TCP vs HTTP <br>
+      TCP is a transport-layer protocol, and HTTP is an application-layer protocol that runs over TCP
+    </div>
+  </div>
+  <div class="row" *ngIf="navigation.DOM">
+    <div class="col-xs-12">
+      <h3>DOM</h3>
+    </div>
+    <div class="col-sm-6" ng-non-bindable>
+      Nodes <br>
+      A node is the generic name for any type of object in the DOM hierarchy. <br>
+      An element is a type of node.
+    </div>
+    <div class="col-sm-6" ng-non-bindable>
+      Important Element API <br>
+      addEventListener getAttribute
+      getElementsByClassName getElementsByTagName
+      children onclick....
+    </div>
+    <div class="col-sm-6" ng-non-bindable>
+      Append vs Append Child / innerHTML vs innerText<br>
+      Append/innerText adds text
+      AppendChild/innerHtml adds node
+    </div>
+    <div class="col-sm-6" ng-non-bindable>
+      DOM events/handling <br>
+      document.onreadystatechange = function(){{ '{' }} <br>
+        if(document.readyState = 'complete'){{ '{' }} <br>
+          //when dom is ready <br>
+        } <br>
+      } <br>
+      addEventListener('click', handler) vs onclick = .... <br>
+      can attach many click events to element.
+      removeEventListener('click',handler)
     </div>
   </div>
 </div>
