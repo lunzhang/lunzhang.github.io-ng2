@@ -14,6 +14,6 @@ import 'jquery';
 //bootstrap
 import 'bootstrap/dist/js/bootstrap';
 //css
-require('bootstrap/dist/css/bootstrap.min.css');
-//css
-require('./css/style.css');
+import 'bootstrap/dist/css/bootstrap.min.css';
+//scss
+import './css/style.scss';
