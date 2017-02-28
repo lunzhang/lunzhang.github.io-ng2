@@ -11,11 +11,10 @@ export class AppComponent implements OnInit{
   currentRoute='';
 
   constructor(private router: Router){
-
   }
 
   ngOnInit(){
-    this.router.events.subscribe((r)=>{
+    this.router.events.subscribe((r:any)=>{
       this.currentRoute = r.url;
       this.currentRoute = this.currentRoute.replace('/','');
     });

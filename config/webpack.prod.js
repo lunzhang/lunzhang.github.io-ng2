@@ -11,7 +11,7 @@ module.exports = webpackMerge(commonConfig, {
 
   output: {
     path: helpers.root('docs'),
-    publicPath: '/',
+    publicPath: 'https://lunzhang.github.io/ng2/',
     filename: '[name].js'
   },
 
